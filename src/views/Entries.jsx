@@ -24,18 +24,6 @@ React.useEffect(() => {
   doGetEntries();
 }, [doGetEntries]);
 
-
-
-
-// NU AM NEVOIE DE ASTA
-  // const navigateToDetails = () =>{
-
-  //   const navigate = useNavigate();
-  //   navigate("/home");
-  // }
-
-  console.log("entries1111s", entries);
-
   const refetchEntries = async () => {
     await doGetEntries();
   };
