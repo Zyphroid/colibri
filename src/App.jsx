@@ -30,9 +30,6 @@ import LoadingComponent from "./components/LoadingComponent";
 
 
 const App = () => {
-  const style = ({ isActive }) => ({
-    fontWeight: isActive ? "bold" : "normal",
-  });
   const [entries, setEntries] = React.useState([]);
 
   return (
@@ -46,7 +43,7 @@ const App = () => {
           <Route
             path="entry/view/:entryId"
             element={<ViewEntry/>} />
-          <Route path={CHARTS_ROUTE} element={<Charts />} />
+          <Route path={CHARTS_ROUTE} element={<Charts entries={entries} />} />
           <Route path="/" element={<Entries />} />
         </Route>
         <Route path="*" element={<NoMatch />} />
@@ -54,61 +51,13 @@ const App = () => {
     </BrowserRouter>
   );
 
-
-
-
-      // <nav>
-      //   <Link to={ENTRIES_ROUTE}>Entries</Link>
-      //   <Link to={CHARTS_ROUTE}>Char</Link>
-      // </nav>
-
-  // return (
-  //     <Routes>
-  //       <Route element={<Layout />}>
-  //         <Route index element={<Entries />} />
-  //         <Route path={ENTRIES_ROUTE} element={<Entries />} />
-  //         <Route path={CHARTS_ROUTE} element={<Charts />} />
-  //         {/* <Route path="users" element={<Users users={users} />}>
-  //         <Route
-  //         path=":userId"
-  //         element={<User onRemoveUser={handleRemoveUser} />}
-  //         />
-  //       </Route> */}
-  //         <Route path="*" element={<NoMatch />} />
-  //       </Route>
-  //     </Routes>
-  // );
-
-// return (
-//   <>
-//     <h1>React Router</h1>
-
-//     <nav
-//       style={{
-//         borderBottom: "solid 1px",
-//         paddingBottom: "1rem",
-//       }}
-//     >
-//       <NavLink to={ENTRIES_ROUTE} style={style}>
-//         Entries
-//       </NavLink>
-//       <NavLink to={CHARTS_ROUTE} style={style}>
-//         Charts
-//       </NavLink>
-//     </nav>
-
-//     <main style={{ padding: "1rem 0" }}>
-//       <Outlet />
-//     </main>
-//   </>
-// );
-  
-
 };
 
 const Layout = () => {
   const style = ({ isActive }) => ({
     fontWeight: isActive ? "bold" : "normal",
+    color: isActive ? 'green' : '',
+    padding: '5px'
   });
 
   return (

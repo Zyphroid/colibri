@@ -15,7 +15,7 @@ const Entry = ({entries, doGetEntries}) => {
   const { register, handleSubmit, formState: { errors } } = useForm({
     mode: "onBlur"
   })
-  // const [queryTemplate, setQueryTemplate] = useState({
+
   //   id: "0",
   //   first_name: "",
   //   last_name: "",
@@ -24,7 +24,7 @@ const Entry = ({entries, doGetEntries}) => {
   //   industry: "",
   //   years_of_experience: "",
   //   salary: "",
-  // });
+
   const handleRegistration = (data) => {
     setEntry({
       id: entry.id,
@@ -75,8 +75,6 @@ const Entry = ({entries, doGetEntries}) => {
   const refetchEntries = async () => {
     await doGetEntries();
   };
-
-
 
   if(loading) {
     return null
